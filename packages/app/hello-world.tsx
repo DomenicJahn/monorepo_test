@@ -5,7 +5,7 @@ import { Text } from '@ui-kitten/components';
 export function HelloWorld() {
   return (
     <View style={styles.container}>
-      <Text>Hello, World!</Text>
+      <Text style={{fontFamily:"Amatic_Regular"}}>Hello, World!</Text>
     </View>
   )
 }

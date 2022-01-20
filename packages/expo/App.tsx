@@ -13,20 +13,23 @@ import { ApplicationProvider } from '@ui-kitten/components';
 enableScreens(true)
 
 export default function App() {
-  const loadFonts = async () => {
-    await Font.loadAsync({
-      'my-font-regular': require('../app/assets/Amatic_Regular.ttf')
+  React.useEffect(() => {
+    Font.loadAsync({
+      'Amatic_Regular': require("../app/resources/Amatic_Regular.ttf")
+    }).then((ele) => {
+      setFontLoaded(true)
+    }).catch((e) => {
+      console.log(e, "e")
     })
-  }
+  },[])
+  
   const [fontLoaded, setFontLoaded] = useState(false);
+
+
   if (!fontLoaded) {
     console.log("FONT NOT LOADED")
     return (
-      <AppLoading
-        startAsync={loadFonts}
-        onFinish={() => { console.log("DONE LOADING");setFontLoaded(true)}}
-        onError={(err) => console.error(err)}
-      />
+      <AppLoading/>
     )
   }
   console.log("FONT IS LOADED, RETURN APP")
