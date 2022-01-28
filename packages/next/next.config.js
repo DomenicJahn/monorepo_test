@@ -7,6 +7,9 @@ const withTM = require('next-transpile-modules')([
   'app',
   '@gorhom/bottom-sheet',
   '@gorhom/portal',
+  '@eva-design/eva',
+  '@ui-kitten/components',
+  '@ui-kitten/eva-icons',
 ])
 
 const nextConfig = {}
